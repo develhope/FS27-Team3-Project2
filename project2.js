@@ -10,3 +10,14 @@ function addTask(taskParameter, callback) {
     }
   }, 1000);
 }
+
+function completeTask(index, callback){
+  setTimeout(() => {
+      if(index < 0 || index > array.length){
+          callback(new Error("Invalid task index"), null);
+      } else {
+          array.splice(index, 1);
+          callback(null, "Task completed sucessfully!")
+      } 
+  }, 1000);
+}
