@@ -21,3 +21,11 @@ function completeTask(index, callback){
       } 
   }, 1000);
 }
+//add task Vittoria
+addTask(taskParameter, (error, data) => {
+  if (error) {
+    console.log(error.message);
+  } else {
+    console.log(data);
+  }
+});
