@@ -21,6 +21,15 @@ function completeTask(index, callback){
       } 
   }, 1000);
 }
+// Lista dei task
+listTasks((err, result) => {
+  if (err) {
+    console.error("Errore:", err.message);
+  } else {
+    console.log("Tasks:", result);
+  }
+});
+
 //add task Vittoria
 addTask(taskParameter, (error, data) => {
   if (error) {
