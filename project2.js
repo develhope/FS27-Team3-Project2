@@ -1,4 +1,5 @@
-const taskParameter = "";
+const taskParameter = "ciao";
+const array = [];
 
 function addTask(taskParameter, callback) {
   setTimeout(() => {
@@ -22,19 +23,31 @@ function completeTask(index, callback){
   }, 1000);
 }
 // Lista dei task
-listTasks((err, result) => {
+function listTasks(){(err, result) => {
   if (err) {
     console.error("Errore:", err.message);
   } else {
     console.log("Tasks:", result);
   }
-});
+};
+}
 
 //add task Vittoria
-addTask(taskParameter, (error, data) => {
+addTask(taskParameter,(error, data) => {
   if (error) {
     console.log(error.message);
   } else {
     console.log(data);
   }
 });
+completeTask(0,(error, data) => {
+    if (error) {
+      console.log(error.message);
+    } else {
+      console.log(data);
+    }
+  });
+  
+
+addTask(taskParameter,listTasks)
+completeTask(2,listTasks)
